@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Nasa Practical</string>
+    <string name="profile_image_description">Profile Image</string>
+    <string name="txt_following">Following</string>
+    <string name="txt_followers">Followers</string>
+    <string name="txt_unfollow">Unfollow</string>
+</resources>
