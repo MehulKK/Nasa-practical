@@ -4,6 +4,7 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.bumptech.glide.Glide.init
 import com.practical.base.BaseViewModel
 import com.practical.data.repository.HomeRepository
 import com.practical.model.response.NasaResponse
@@ -16,7 +17,7 @@ import timber.log.Timber
 /**
  * ViewModel for [com.practical.ui.activity.HomeActivity]
  */
-class SampleViewModel @ViewModelInject constructor(
+class HomeViewModel @ViewModelInject constructor(
     private val userRepository: HomeRepository
 ) : BaseViewModel() {
 
@@ -36,11 +37,13 @@ class SampleViewModel @ViewModelInject constructor(
 
     private var currentPage = 0
 
+    val clickHandler = MutableLiveData<NasaResponse>()
+
     init {
-        loadMoreUsers()
+        loadNasaData()
     }
 
-    fun loadMoreUsers() {
+    fun loadNasaData() {
         _isLoadingPage.value = true
         currentPage += 1
 

@@ -118,7 +118,7 @@ abstract class BaseRecyclerAdapter<T> : RecyclerView.Adapter<BaseRecyclerAdapter
          */
         fun bind(data: T) {
             viewDataBinding.setVariable(BR.data, data)
-            //viewDataBinding.setVariable(BR.clickHandler, this)
+            viewDataBinding.setVariable(BR.clickHandler, this)
             setDataForListItem(viewDataBinding, data)
             setDataForListItemWithPosition(viewDataBinding, data, adapterPosition)
             viewDataBinding.executePendingBindings()

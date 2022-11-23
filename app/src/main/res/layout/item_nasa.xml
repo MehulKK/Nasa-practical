@@ -9,11 +9,16 @@
             name="data"
             type="com.practical.model.response.NasaResponse" />
 
+        <variable
+            name="clickHandler"
+            type="android.view.View.OnClickListener" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="@{clickHandler::onClick}"
         android:padding="2dp">
 
         <ImageView

@@ -1,5 +1,7 @@
 package com.practical.model.response
 
+import java.io.Serializable
+
 data class NasaResponse(
     val copyright: String = "",
     val date: String = "",
@@ -9,4 +11,4 @@ data class NasaResponse(
     val service_version: String = "",
     var title: String = "",
     val url: String = ""
-)
+) : Serializable

@@ -4,12 +4,12 @@ import android.view.View
 import com.practical.R
 import com.practical.base.BaseRecyclerAdapter
 import com.practical.model.response.NasaResponse
+import com.practical.viewmodel.HomeViewModel
 
-class NasaAdapter : BaseRecyclerAdapter<NasaResponse>() {
-    /*override fun getLayoutIdForType(viewType: Int): Int = R.layout.item_user*/
+class NasaAdapter(private val viewModel: HomeViewModel) : BaseRecyclerAdapter<NasaResponse>() {
 
     override fun onItemClick(view: View?, adapterPosition: Int) {
-        /* no-op */
+        viewModel.clickHandler.value = getListItems()[adapterPosition]
     }
 
     override fun areItemsSame(oldItem: NasaResponse, newItem: NasaResponse): Boolean {

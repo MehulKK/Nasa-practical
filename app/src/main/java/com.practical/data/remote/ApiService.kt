@@ -9,5 +9,5 @@ import retrofit2.http.GET
  */
 interface ApiService {
     @GET("take-home-exercise-data/trunk/nasa-pictures.json")
-    suspend fun loadUsers(): Response<ArrayList<NasaResponse>>
+    suspend fun loadNasaData(): Response<ArrayList<NasaResponse>>
 }
